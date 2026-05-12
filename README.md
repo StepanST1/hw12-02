@@ -52,11 +52,11 @@ ALTER USER 'sys_test'@'localhost' IDENTIFIED WITH mysql_native_password BY 'pass
 1. `Поднял MySQL в Docker - docker run --name mysql-lab -e MYSQL_ROOT_PASSWORD=rootpass -p 3306:3306 -d mysql:8.0`
 2. `CREATE USER 'sys_temp'@'%' IDENTIFIED BY '111111';`
 3. ` SELECT user, host FROM mysql.user;`
-![TASK_3](\img\Screenshot_1.png)`
+![TASK_3](/img/Screenshot_1.png)`
 4. `GRANT ALL PRIVILEGES ON *.* TO 'sys_temp'@'%' WITH GRANT OPTION;
 FLUSH PRIVILEGES;`
 5. `SHOW GRANTS FOR 'sys_temp'@'%';`
- ![TASK_5](\img\Screenshot_2.png)
+ ![TASK_5](/img/Screenshot_2.png)
 6. `mysql> ALTER USER 'sys_temp'@'%' IDENTIFIED WITH mysql_native_password BY '111111';
 mysql> exit
 root@cicd:/home/stepan# docker exec -it mysql-lab mysql -u sys_temp -p`
@@ -64,7 +64,7 @@ root@cicd:/home/stepan# docker exec -it mysql-lab mysql -u sys_temp -p`
 8. `docker exec -it mysql-lab mysql -u sys_temp -p -e "SOURCE /tmp/sakila-schema.sql;"
     docker exec -it mysql-lab mysql -u sys_temp -p -e "SOURCE /tmp/sakila-data.sql;"`
 9. `USE sakila; SHOW TABLES;`
- ![TASK_9](img\Screenshot_3.png)
+ ![TASK_9](/img/Screenshot_3.png)
 ---
 
 ### Задание 2
@@ -72,5 +72,5 @@ root@cicd:/home/stepan# docker exec -it mysql-lab mysql -u sys_temp -p`
 `Составьте таблицу, используя любой текстовый редактор или Excel, в которой должно быть два столбца: в первом должны быть названия таблиц восстановленной базы, во втором названия первичных ключей этих таблиц. Пример: (скриншот/текст)`
 
 ### Ответ
- ![TASK_2](img\Screenshot_4.png)
+ ![TASK_2](/img/Screenshot_4.png)
 
